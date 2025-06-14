@@ -1,0 +1,34 @@
+[project]
+name = "project-name"
+version = "0.0.1"
+description = "Project description."
+authors = [
+    {name = "FirstName LastName", email = "user@host.com"}
+]
+# license = "TODO"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/projectname"]
+
+[tool.mypy]
+check_untyped_defs = true
+no_implicit_optional = true
+warn_unused_configs = true
+warn_redundant_casts = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+
+[tool.typos]
+default.check-file = true
+default.check-filename = true
+default.extend-ignore-identifiers-re = []
+files.extend-exclude = [
+    "*.ipynb",  # Notebook cells are asigned a hash.
+]
